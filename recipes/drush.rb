@@ -7,8 +7,12 @@
 # All rights reserved - Do Not Redistribute
 #
  
-php_pear_channel "pear.drush.org" do
+drush = php_pear_channel "pear.drush.org" do
   action :discover
+end
+
+php_pear_channel 'pear.drush.org' do
+  action :update
 end
 
 php_pear "Console_Table" do
@@ -16,7 +20,8 @@ php_pear "Console_Table" do
   preferred_state "stable"
 end
 
-php_pear "drush/drush" do
+php_pear "drush" do
   action :install
   preferred_state "stable"
+  channel drush.channel_name
 end
