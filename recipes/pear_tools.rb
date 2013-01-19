@@ -30,6 +30,20 @@ php_pear_channel 'pear.phpunit.de' do
   action :update
 end
 
+php_pear "PHPUnit" do
+  action :install
+  preferred_state "stable"
+  options "--alldeps"
+  channel phpunit.channel_name
+end
+
+php_pear "phploc" do
+  action :install
+  preferred_state "stable"
+  options "--alldeps"
+  channel phpunit.channel_name
+end
+
 php_pear "phpcpd" do
   action :install
   preferred_state "stable"
@@ -49,4 +63,36 @@ php_pear "PHP_CodeBrowser" do
   preferred_state "stable"
   options "--alldeps"
   channel qatools.channel_name
-end 
+end
+
+pdepend = php_pear_channel "pear.pdepend.org" do
+  action :discover
+end
+php_pear_channel 'pear.pdepend.org' do
+  action :update
+end
+php_pear "PHP_Depend" do
+  action :install
+  preferred_state "stable"
+  options "--alldeps"
+  channel pdepend.channel_name
+end
+
+phpmd = php_pear_channel "pear.phpmd.org" do
+  action :discover
+end
+php_pear_channel 'pear.phpmd.org' do
+  action :update
+end
+php_pear "PHP_PMD" do
+  action :install
+  preferred_state "stable"
+  options "--alldeps"
+  channel phpmd.channel_name
+end
+
+php_pear "PHP_CodeSniffer" do
+  action :install
+  preferred_state "stable"
+  options "--alldeps"
+end
