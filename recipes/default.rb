@@ -17,4 +17,5 @@ mysql_database_user 'drupal' do
   connection mysql_connection_info
   password node['webserver-dev-chef']['drupal_pw']
   action :create
+  database_name 'drupal_test'
 end
