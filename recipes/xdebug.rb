@@ -8,7 +8,6 @@
 # 
 
 php_pear "xdebug" do
-    version         "2.2.1"
     action          :install
     preferred_state "stable"
     zend_extensions ['xdebug.so']
