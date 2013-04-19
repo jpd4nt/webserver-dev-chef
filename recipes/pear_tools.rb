@@ -39,14 +39,20 @@ end
 
 php_pear "phploc" do
   action :install
-  preferred_state "stable"
   options "--alldeps"
+  channel phpunit.channel_name
+end
+php_pear "phploc" do
+  action :upgrade
   channel phpunit.channel_name
 end
 
 php_pear "phpcpd" do
   action :install
-  preferred_state "stable"
+  channel phpunit.channel_name
+end
+php_pear "phpcpd" do
+  action :upgrade
   channel phpunit.channel_name
 end
 

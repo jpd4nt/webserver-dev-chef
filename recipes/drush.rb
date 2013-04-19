@@ -24,3 +24,7 @@ php_pear "drush" do
   action :install
   channel drush.channel_name
 end
+php_pear "drush" do
+  action :upgrade
+  channel drush.channel_name
+end
