@@ -21,7 +21,7 @@ php_pear "Console_Table" do
 end
 
 php_pear "drush" do
-  version "5.8.0"
+  version "5.9.0"
   action :install
   preferred_state "stable"
   channel drush.channel_name
