@@ -8,7 +8,7 @@
 #
 
 execute 'autodiscover' do
-  command 'pear config-set auto_discover 1'
+  command "#{node['php']['pear']} config-set auto_discover 1"
   action :run
 end
 
